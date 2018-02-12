@@ -2,13 +2,13 @@
 Function Set-PasswordEncrypted() {
  <#
  .SYNOPSIS
- Эта функция шифрует пароль и сохраняет в реестр для последующего получения функцией Get-PasswordFromKeePass.
+ This function encrypts password and saves it to the Windows registry.
  .DESCRIPTION
- Эта функция сохранит пароль, зашифрованный таким образом, что пароль сможет расшифровать только текущая  учетная запись, в кусте реестра HKCU текущей учетной записи. Пароль в последующем может быть использован функцией Get-PasswordFromKeePass.
+  This function saves encrypted password for next usage only current account. It saves password in HKCU registry hive. Encrypted password could be used by Get-PasswordFromKeePass function.
  .PARAMETER Name
- Имя пароля, необходимо для последующего извлечения этого пароля из реестра.
+ Password name. Needed for getting this password from registry.
  .PARAMETER PlainPassword
- Пароль в виде нешифрованного текста.
+ Password as plain text.
  .EXAMPLE
  Set-PasswordEncrypted -Name 'saqwel' -PlainPassword 'P@ssw0rd'
  #>
