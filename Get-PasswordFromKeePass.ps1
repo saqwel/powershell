@@ -5,14 +5,11 @@ Function Get-PasswordFromKeePass() {
 	.DESCRIPTION
 	This function allows to get any password from KeePass database,
 	if you know entry name and parent group name, where user name and password are stored.
-	To use this function you need to save encrypted KeePass password in registry hive HKCU:\Software\Passwords.
-	$SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force | ConvertFrom-SecureString
-	$RegPath = "HKCU:\Software\Passwords"
-	New-Item -Path $RegPath -Confirm:$false -Force -ErrorAction Stop | Out-Null
 	Clarification.
 	You can create groups (or folders) in KeePass which is fills with data. These groups are called ParentGroup. 
 	For getting password you need to know entry name and parent group name where this entry stored. 
 	For example, we divide all the data by operating systems names.
+	To use this function you need to save encrypted KeePass password in registry hive HKCU:\Software\Passwords with cmdlet Set-PasswordEncrypted.
 	.PARAMETER UserName
 	Entry name where username and password are stored. Entry name could be equal to username.
 	.PARAMETER ParentGroupName
